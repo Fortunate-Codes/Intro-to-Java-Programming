@@ -1,1 +1,73 @@
+Java I/O (Input/Output) refers to the process of reading data from an input source, such as a file or network socket, and writing data to an output destination, such as a file or network socket. Java provides a rich set of classes and methods for performing I/O operations, which makes it easy to read and write data in a variety of formats.
 
+
+Java I/O classes are divided into two categories:
+
+Byte stream classes: These classes provide low-level access to binary data, such as bytes and primitive data types. Examples of byte stream classes include
+`InputStream`, `OutputStream`, `FileInputStream`, and `FileOutputStream`.
+
+Character stream classes: These classes provide high-level access to text data, such as characters and strings. Examples of character stream classes include `Reader`, `Writer`, `FileReader`, and `FileWriter`.
+
+Here's an example of how to read data from a file using Java I/O:
+
+//////////// CODE /////////////
+
+try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+////////////// CODE ///////////
+
+In this example, we create a `BufferedReader` object that wraps a `FileReader` object to read data from a file. We then use a `while` loop to read lines from the file until there are no more lines to read.
+
+Java Serialization is the process of converting an object into a stream of bytes that can be saved to a file or sent over a network. This allows objects to be transferred between different systems or saved for later use. To serialize an object in Java, you need to implement the `Serializable` interface, which is a marker interface that indicates that an object can be serialized.
+
+Here's an example of how to serialize and deserialize an object in Java:
+
+///////// CODE ///////////
+
+public class MyClass implements Serializable {
+    private String name;
+    private int age;
+    
+    public MyClass(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+}
+
+public static void main(String[] args) {
+    MyClass obj = new MyClass("John", 30);
+    
+    try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("file.ser"))) {
+        out.writeObject(obj);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    
+    try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("file.ser"))) {
+        MyClass obj2 = (MyClass) in.readObject();
+        System.out.println(obj2.getName()); // prints "John"
+        System.out.println(obj2.getAge()); // prints 30
+    } catch (IOException | ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+}
+
+///////// CODE //////////
+
+
+In this example, we create a `MyClass` object and serialize it to a file using an `ObjectOutputStream`. We then deserialize the object from the file using an `ObjectInputStream` and cast it back to a `MyClass` object. Finally, we print the values of the object's properties to verify that the deserialization was successful.
