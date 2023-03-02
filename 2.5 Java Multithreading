@@ -1,0 +1,50 @@
+Java Multithreading allows multiple threads of execution to run concurrently within a single program. In other words, multithreading allows you to run multiple parts of a program at the same time, which can significantly improve the performance and responsiveness of the application.
+
+In Java, multithreading is implemented using the `Thread` class, which is a built-in class that provides methods for creating and managing threads. Here are the steps to create a thread in Java:
+
+Create a class that extends the Thread class or implements the `Runnable` interface.
+
+Override the `run()` method of the `Thread` class or the `Runnable` interface. This method contains the code that will be executed when the thread is started.
+
+Create an instance of the class that extends `Thread` or implements `Runnable`.
+
+Call the `start()` method of the `Thread` class to start the thread.
+
+Here is an example of how to create a simple multithreaded program in Java:
+
+//////////////////// CODE ////////////////////
+
+public class MyThread extends Thread {
+
+    public void run() {
+    
+        for (int i = 0; i < 10; i++) {
+        
+            System.out.println("Thread 1: " + i);
+            
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+    
+        MyThread t1 = new MyThread();
+        
+        t1.start();
+        
+        for (int i = 0; i < 10; i++) {
+        
+            System.out.println("Main thread: " + i);
+            
+        }
+    }
+}
+
+
+In this example, we define a class `MyThread` that extends the `Thread` class and overrides the `run()` method to print numbers from 0 to 9. We then create an instance of this class and call its `start()` method to start the thread. Finally, we print numbers from 0 to 9 in the main thread.
+
+Java also provides synchronization mechanisms to prevent multiple threads from accessing shared resources simultaneously, which can lead to race conditions and other problems. The most common synchronization mechanism in Java is the `synchronized` keyword, which can be used to synchronize a block of code or a method.
+
+By using multithreading and synchronization mechanisms effectively, you can write efficient and scalable Java programs that can take full advantage of modern multi-core processors.
