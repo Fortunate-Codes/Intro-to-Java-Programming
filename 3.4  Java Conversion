@@ -1,0 +1,38 @@
+## Java Conversion
+
+Java provides a set of methods for converting values from one data type to another. These methods are called type conversion or type casting methods.
+
+There are two types of conversions in Java:
+
+Widening conversion (implicit): When a data type with smaller size is converted to a data type with larger size, it is called widening conversion. It is done implicitly by the compiler because it does not cause any loss of data. For example, converting an int to a double or a float to a double.
+
+Narrowing conversion (explicit): When a data type with larger size is converted to a data type with smaller size, it is called narrowing conversion. It needs to be done explicitly by the programmer because it may cause loss of data. For example, converting a double to an int or a float to a byte.
+
+Here are some examples of type conversion in Java:
+
+
+///////// CODE ////////
+
+int i = 100;
+double d = i;  // implicit widening conversion
+
+double x = 10.5;
+int y = (int) x;  // explicit narrowing conversion
+
+char c = 'A';
+int n = c;  // implicit widening conversion
+
+int m = 97;
+char ch = (char) m;  // explicit narrowing conversion
+
+///////// CODE ////////
+
+In the first example, we declare an integer variable i and assign it the value 100. We then declare a double variable d and assign it the value of i. This is an example of implicit widening conversion because double is a larger data type than int.
+
+In the second example, we declare a double variable x and assign it the value 10.5. We then declare an integer variable y and assign it the value of x, but we need to use explicit narrowing conversion by casting x to int. Since int is a smaller data type than double, this may cause loss of data.
+
+In the third example, we declare a character variable c and assign it the value 'A'. We then declare an integer variable n and assign it the value of c. This is an example of implicit widening conversion because int is a larger data type than char.
+
+In the fourth example, we declare an integer variable m and assign it the value 97. We then declare a character variable ch and assign it the value of m, but we need to use explicit narrowing conversion by casting m to char. This is because char is a smaller data type than int, and casting is required to avoid loss of data.
+
+Type conversion is an important concept in Java programming because it allows you to work with different data types and perform operations on them. However, it is important to be careful when using explicit narrowing conversion, as it may cause loss of data and result in unexpected behavior in your program.
