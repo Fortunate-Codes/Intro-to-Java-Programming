@@ -1,0 +1,132 @@
+## Java Polymorphism
+
+Polymorphism is another important concept in object-oriented programming, including Java. 
+It allows you to write code that can work with objects of different classes, as long as 
+they share a common interface or superclass.
+
+In Java, polymorphism can be achieved through method overridiing and method overloading.
+
+Method overriding occurs when a subclass provides its own implementation for a method that 
+is already defined in its superclass. This allows instances of the superclass, and the 
+appropriate method implementation will be called based on the actual types of the object at 
+runtime.
+
+Method overloading occurs when a class provides multiple methods with the same name but 
+different parameter lists. This allows methods to be called with different arguments, and the
+appropriate method implementation will be called based on the number and types of the 
+arguments.
+
+Here is an example of polymorphism in Java:
+
+/////////////// CODE ///////////////
+
+public class Animal {
+
+  public void speak() {
+  
+    System.out.println("Animal speaks!");
+    
+  }
+  
+}
+
+// Create Class Dog and extends animal class
+
+public class Dog extends Animal {
+
+  @Override
+  public void speak() {
+    
+    System.out.println("Woof!");
+    
+  }
+  
+  public void speak(int num) {
+  
+    for (int i =0; i < num; i++) {
+    
+      System.out.println("Woof!");
+      
+     }
+     
+   }
+   
+ }
+ 
+ // Create Class Main
+ 
+ public class Main {
+ 
+  public static void main(String[] args) {
+  
+    Animal animal = new Animal();
+    
+    Dog dog = new Dog();
+    
+    animal.speak(); // Output: Animal speaks!
+    
+    dog.speak();  // Output: Woof!
+    
+    dog.speak(3); // Output: Woof! Woof! Woof!
+  }
+  
+}
+
+/////////////// CODE ///////////////
+
+
+Polymorphism is another important concept in object-oriented programming, including Java. It allows you to write code that can work with objects of different classes, as long as they share a common interface or superclass.
+
+In Java, polymorphism can be achieved through method overriding and method overloading.
+
+Method overriding occurs when a subclass provides its own implementation for a method that is already defined in its superclass. This allows instances of the subclass to be used in place of instances of the superclass, and the appropriate method implementation will be called based on the actual type of the object at runtime.
+
+Method overloading occurs when a class provides multiple methods with the same name but different parameter lists. This allows methods to be called with different arguments, and the appropriate method implementation will be called based on the number and types of the arguments.
+
+Here is an example of polymorphism in Java:
+
+java
+Copy code
+public class Animal {
+    public void speak() {
+        System.out.println("Animal speaks!");
+    }
+}
+
+public class Dog extends Animal {
+    @Override
+    public void speak() {
+        System.out.println("Woof!");
+    }
+
+    public void speak(int num) {
+        for (int i = 0; i < num; i++) {
+            System.out.println("Woof!");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Dog dog = new Dog();
+
+        animal.speak(); // Output: Animal speaks!
+        dog.speak(); // Output: Woof!
+        dog.speak(3); // Output: Woof! Woof! Woof!
+    }
+}
+In this example, the `Dog` class overrides the `speak()` method of the `Animal` 
+class to provide its own implementation. 
+The `Dog` class also provides an overloaded version of the `speak()`
+method that takes an integer argument and prints out the "Woof!" message multiple times.
+
+In the `Main` class, an instance of the `Animal` class and an instance of the `Dog` class 
+are created. Both instances are assigned to variables of type `Animal`, 
+which is the common superclass of both classes. 
+The `speak()` method is called on both instances, and the appropriate implementation
+is called based on the actual type of the object at runtime.
+
+Overall, polymorphism is a powerful tool for writing flexible and reusable code in Java, 
+and it allows you to create programs that can work with a variety of different objects and 
+classes.
