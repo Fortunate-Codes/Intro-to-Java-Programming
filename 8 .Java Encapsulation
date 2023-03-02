@@ -1,0 +1,89 @@
+## Java Encapsulation
+
+Encapsulation is an important concept in object-oriented programming, including Java. It refers to the practice of hiding the internal details of an object and providing a public interface for interacting with the object.
+
+In Java, encapsulation is achieved through the use of access modifiers, such as `private`, `public`, and `protected`, to control the visibility of class members (fields and methods) from outside the class. By default, class members are package-private, meaning they are visible only within the same package.
+
+
+Encapsulation helps to prevent the external code from accessing or modifying the internal state of an object directly. Instead, the object provides public methods for accessing and modifying its state, which can enforce certain rules or constraints to maintain the object's integrity and consistency.
+
+Here is an example of encapsulation in Java:
+
+
+////////////////////////////////// CODE /////////////////////////////////
+
+public class BankAccount {
+
+    private String accountNumber;
+    
+    private double balance;
+
+    public BankAccount(String accountNumber, double balance) {
+    
+        this.accountNumber = accountNumber;
+        
+        this.balance = balance;
+        
+    }
+
+    public String getAccountNumber() {
+    
+        return accountNumber;
+        
+    }
+
+    public double getBalance() {
+    
+        return balance;
+        
+    }
+
+    public void deposit(double amount) {
+    
+        balance += amount;
+        
+    }
+
+    public void withdraw(double amount) {
+    
+        if (balance >= amount) {
+        
+            balance -= amount;
+            
+        } else {
+        
+            System.out.println("Insufficient balance!");
+            
+        }
+        
+    }
+    
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+    
+        BankAccount account = new BankAccount("123456789", 1000.0);
+        
+        System.out.println("Account number: " + account.getAccountNumber());
+        
+        System.out.println("Balance: " + account.getBalance());
+
+        account.deposit(500.0);
+        
+        System.out.println("New balance: " + account.getBalance());
+
+        account.withdraw(2000.0);
+        
+        System.out.println("New balance: " + account.getBalance());
+        
+    }
+    
+}
+
+////////////////////////////////// CODE /////////////////////////////////
+
+In this example, the `BankAccount` class has two private fields `accountNumber` and   `balance`, and public methods `getAccountNumber()`, `getBalance()`, `deposit()`, and `withdraw()` for interacting with the object. The `deposit()` and `withdraw()` methods modify the internal state of the object (i.e., the `balance` field), but the internal state cannot be accessed or modified directly from outside the class.
+
+Overall, encapsulation is a powerful tool for creating robust and maintainable code in Java, and it allows you to control the access to the internal state of an object and enforce certain rules or constraints to maintain its integrity and consistency.
