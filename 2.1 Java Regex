@@ -1,0 +1,99 @@
+Java provides a powerful regular expression (regex)
+engine for matching and manipulating text patterns.
+Regular expression are patterns used to match character 
+combinations in strings. In Java, the `java.util.regex`
+package provides classes for working with regular expressions.
+
+Here are some commonly used classes and methods in the `java.util.regex` packages:
+
+## Pattern
+
+To `java.util.regex.Pattern` class is used to compile a regular 
+expression into a pattern. It provides a `compile()` method that takes a regular expression
+as a string and returns a `Pattern` object.
+
+//////////////// CODE ///////////////////
+
+String regex = "hello";
+Pattern pattern = Pattern.compile(regex);
+
+/////////////// CODE ///////////////////
+
+## Matcher
+
+The `java.util.regex.Matcher` class is used to match a pattern against a string. It provides
+methods for finding, replacing, and splitting a string based on a pattern.
+
+//////////////// CODE /////////////
+
+String text = "hello world";
+Matcher matcher = pattern.matcher(text);
+
+//////////////// CODE /////////////
+
+## find()
+The `find()` method of the `Matcher` class is used to find the next occurence of the pattern
+int the string.
+
+//////////////// CODE /////////////
+
+while (matcher.find()) {
+  // do something with the match
+}
+
+//////////////// CODE /////////////
+
+## matches()
+
+The `matches()` method of the `Matcher` class is used to match the entire string against
+the pattern.
+
+//////////////// CODE /////////////
+
+boolean isMatch = matcher.matches();
+
+//////////////// CODE /////////////
+
+## replaceAll()
+
+The `replaceAll()` method of the `Matcher` class is used to replace all occurrences 
+of the pattern in the string.
+
+//////////////// CODE /////////////
+
+String newText = matcher.replaceAll("hi");
+
+//////////////// CODE /////////////
+
+## split()
+
+The `split()` method of the `Pattern` class is used to split a string into an array 
+of substrings based on a pattern.
+
+//////////// CODE ///////////
+
+String[] tokens = pattern.split(text);
+
+/////////// CODE ////////////
+
+Example
+
+Here is an example of using regular expressions in Java to validate an email address:
+
+
+///////// CODE ///////////
+
+String regex = "^[\\w\\.-]+@[\\w\\.-]+\\.[a-zA-Z]{2,}$";
+String email = "johndoe@example.com";
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(email);
+boolean isValidEmail = matcher.matches(); // true
+
+/////////// CODE ////////////
+
+In this example, the regular expression `^[\\w\\.-]+@[\\w\\.-]+\\.[a-zA-Z]{2,}$`
+is used to match a valid email address. The pattern is compiled into a `Pattern` object, 
+and then a `Matcher` object is created to match the email address against 
+the pattern using the `matches()` method. Finally, 
+the result of the match is stored in a boolean variable.
+
