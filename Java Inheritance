@@ -1,0 +1,72 @@
+## Java Inheritance
+
+Inheritance is an important concept in object-oriented programming, including Java. 
+It allows you to create new classes that are based on existing classes, 
+thereby reusing code and promoting code organization and structure.
+
+In Java, inheritance is achieved through the `extends` keyword, 
+which allows a new class to inherit the properties and methods of an existing class. 
+The existing class is called the parent or superclass, and the new class is called the child or subclass.
+
+The child class inherits all of the properties and methods of the parent class, 
+including public and protected fields and methods. 
+Private fields and methods are not inherited, as they are not visible to the child class.
+
+The child class can also override the methods of the parent class to provide its own implementation. 
+This is done by defining a method with the same name and signature as the parent method in the child class. 
+When the method is called on an instance of the child class, 
+the child's implementation will be used instead of the parent's.
+
+In addition to inheriting and overriding methods, 
+the child class can also add its own fields and methods. 
+This allows the child class to extend and customize the behavior of the parent class.
+
+
+///////////// CODE ///////////
+
+public class Animal {
+
+    public void speak() {
+    
+        System.out.println("Animal speaks!");
+        
+    }
+    
+}
+
+// Create new Class Dog
+public class Dog extends Animal {
+
+    @Override
+    public void speak() {
+    
+        System.out.println("Woof!");
+        
+    }
+    
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+    
+        Animal animal = new Animal();
+        
+        Dog dog = new Dog();
+
+        animal.speak(); // Output: Animal speaks!
+        
+        dog.speak(); // Output: Woof!
+    }
+    
+}
+
+In this example, the `Dog` class extends the `Animal` class, which means that it inherits the `speak()` method from the `Animal` class. The `Dog` class overrides the `speak()` method to provide its own implementation. When the speak() method is called on an instance of the Dog class, the Dog's implementation is used instead of the `Animal`'s implementation.
+
+Overall, inheritance is a powerful tool for code reuse and organization in Java, and it allows you to create complex and flexible object-oriented programs.
+
+
+
+
+
+
