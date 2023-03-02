@@ -1,28 +1,169 @@
 ## Java String
 
+In Java, a string is a sequence of characters. The `java.lang.String` class is used to represent strings in Java. String are immutable, which means that once a string object is created, its value cannot be changed.
+
+Here are common operations you can perform on strings in Java:
+
+## Creating strings
+
+Yo can create a string object in Java by using a string literal, which is a sequence of chracters enclosed in double quotes. 
+
+For example: 
+
+//////////////// CODE //////////////
+
+String s = "hello";
+
+//////////////// CODE //////////////
+
+You can also create a string object using `new` keyword and the `String` constructor:
+
+//////////////// CODE //////////////
+
+String s = new String("hello");
+
+//////////////// CODE //////////////
+
+## Concatenating strings
+You can concatenate two or more strings in Java using the `+` operator or the `concat()` method. For example:
+
+///////// CODE ////////////
+
+String s1 = "hello";
+String s2 = "world";
+String s3 = s1 + " " + s2; // concatenation using +
+String s4 = s1.concat(" ").concat(s2); // concatenation using concat()
+
+//////// CODE ///////////
+
+## Comparing strings
+You can compare two strings in Java using the `equals()` method or the `compareTo()` method. For example:
 
 
+///////// CODE /////////
+
+String s1 = "hello";
+String s2 = "world";
+String s3 = "hello";
+boolean b1 = s1.equals(s2); // false
+boolean b2 = s1.equals(s3); // true
+int result = s1.compareTo(s2); // returns a negative value because "hello" comes before "world" in lexicographic order
+
+//////////// CODE ///////////
+
+## Finding substrings
+You can find a substring within a string in Java using the `indexOf()` method or the `substring()` method. For example:
 
 
+/////////// CODE //////////
+
+String s1 = "hello world";
+int index = s1.indexOf("world"); // returns 6
+String s2 = s1.substring(6, 11); // returns "world"
+
+/////////// CODE ////////////
+
+## Converting strings
+You can convert a string to an integer or a double using the `parseInt()` or `parseDouble()` methods, respectively. For example:
+
+/////////// CODE //////////// 
+
+String s1 = "42";
+int i = Integer.parseInt(s1); // converts "42" to the integer 42
+String s2 = "3.14";
+double d = Double.parseDouble(s2); // converts "3.14" to the double 3.14
+
+///////// CODE //////////////
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Overall, strings are a fundamental data type in Java and are used extensively in Java programming. Understanding how to create, manipulate, and compare strings is essential for writing effective Java code.
 
 
 
 ## Java String Methods
+
+Java provides a number of methods on the java.lang.String class that you can use to manipulate strings. Here are some common methods:
+
+length()
+
+The length() method returns the number of characters in a string.
+
+///////////// CODE //////////////
+
+String s = "hello";
+int length = s.length(); // returns 5
+
+//////////// CODE //////////////
+
+charAt()
+
+The `charAt()` method returns the character at a specified index in a string.
+
+//////////// CODE //////////////
+String s = "hello";
+char c = s.charAt(1); // returns 'e'
+//////////// CODE //////////////
+
+substring()
+
+The `substring()` method returns a substring of a string, starting at a specified index and ending at the end of the string or a specified index.
+
+//////////// CODE //////////////
+
+String s = "hello world";
+String s1 = s.substring(6); // returns "world"
+String s2 = s.substring(0, 5); // returns "hello"
+
+//////////// CODE //////////////
+
+toUpperCase() and toLowerCase()
+
+The `toUpperCase()` method returns a new string with all characters converted to uppercase, while the `toLowerCase()` method returns a new string with all characters converted to lowercase.
+
+//////////// CODE //////////////
+
+String s1 = "hello";
+String s2 = s1.toUpperCase(); // returns "HELLO"
+String s3 = s2.toLowerCase(); // returns "hello"
+
+//////////// CODE //////////////
+
+equals() and equalsIgnoreCase()
+
+The `equals()` method compares two strings for equality, while the `equalsIgnoreCase()` method compares two strings for equality, ignoring case.
+
+//////////// CODE //////////////
+
+String s1 = "hello";
+String s2 = "world";
+String s3 = "HELLO";
+boolean b1 = s1.equals(s2); // false
+boolean b2 = s1.equals(s3); // false
+boolean b3 = s1.equalsIgnoreCase(s3); // true
+
+//////////// CODE //////////////
+
+startsWith() and endsWith()
+
+The `startsWith()` method returns true if a string starts with a specified prefix, while the `endsWith()` method returns true if a string ends with a specified suffix.
+
+//////////// CODE //////////////
+
+String s1 = "hello world";
+boolean b1 = s1.startsWith("hello"); // true
+boolean b2 = s1.endsWith("world"); // true
+
+//////////// CODE //////////////
+
+replace()
+
+The `replace()` method returns a new string with all occurrences of a specified character or substring replaced with another character or substring.
+
+//////////// CODE //////////////
+
+String s1 = "hello world";
+String s2 = s1.replace("world", "Java"); // returns "hello Java"
+
+//////////// CODE //////////////
+
+These are just a few examples of the many methods available on the `java.lang.String` class. Knowing these methods will help you manipulate and work with strings in your Java programs.
