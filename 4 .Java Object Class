@@ -1,25 +1,34 @@
-In Java, the `Object` class is a fundamental class that serves as the root of the class hierarchy. Every class in Java is a direct or indirect subclass of the `Object` class. This means that the `Object` class provides a common set of methods and properties that are available to all Java classes.
+In Java, the `Object` class is a fundamental class that serves as the root of the class 
+hierarchy. Every class in Java is a direct or indirect subclass of the `Object` class. 
+This means that the `Object` class provides a common set of methods and properties that are
+available to all Java classes.
 
-The `Object` class defines several important methods that can be used by any Java object. Some of the most commonly used methods include:
+The `Object` class defines several important methods that can be used by any Java object. 
+Some of the most commonly used methods include:
 
-*	`equals()`: This method checks whether two objects are equal in value. By default, this method
-	checks whether the two objects have the same memory address, but it can be overridden in a 		
-	subclass to provide a custom comparison.
+* `equals()`: This method checks whether two objects are equal in value. By default, this method
+   checks whether the two objects have the same memory address, but it can be overridden in a 		
+   subclass to provide a custom comparison.
 
-*	`hashCode()`: This method returns a hash code value for the object. The hash code is a unique
-	integer value that is used by many Java classes to identify objects in collections and other
-	data structures.
+* `hashCode()`: This method returns a hash code value for the object. The hash code is a unique
+   integer value that is used by many Java classes to identify objects in collections and other
+   data structures.
 
-*	`toString()`: This method returns a string representation of the object. By default, this
-	 method returns the name of the class followed by the object's memory address, but it can be 
-	 overridden in a subclass to provide a custom string representation.
+*  `toString()`: This method returns a string representation of the object. By default, this
+    method returns the name of the class followed by the object's memory address, but it can be 
+    overridden in a subclass to provide a custom string representation.
 
-*	getClass(): This method returns the runtime class of the object. This can be useful for 	
-	performing runtime type checks and for obtaining metadata about the object's class.
+*  getClass(): This method returns the runtime class of the object. This can be useful for 	
+   performing runtime type checks and for obtaining metadata about the object's class.
 
-In addition to these methods, the Object class also provides a few other useful methods, such as wait(), notify(), and notifyAll(), which can be used for synchronization and thread management.
+In addition to these methods, the Object class also provides a few other useful methods, 
+such as wait(), notify(), and notifyAll(), which can be used for synchronization and thread 
+management.
 
-Overall, the Object class is an essential part of the Java class hierarchy and provides a common set of methods and properties that can be used by any Java object. By understanding and using these methods, you can create more powerful and flexible Java programs.
+Overall, the Object class is an essential part of the Java class hierarchy and provides a 
+common set of methods and properties that can be used by any Java object. 
+By understanding and using these methods, you can create more powerful and flexible Java
+programs.
 
 
 
