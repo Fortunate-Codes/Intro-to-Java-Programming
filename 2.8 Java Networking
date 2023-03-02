@@ -1,0 +1,50 @@
+## Java Networking
+
+Java Networking provides classes and interfaces to communicate over a network. It includes the ability to connect to remote hosts, send and receive data, and work with protocols like TCP, UDP, and HTTP.
+
+The key classes and interfaces for networking in Java are:
+
+`Socket`: A client-side endpoint for communicating with a server using a TCP connection.
+`ServerSocket`: A server-side endpoint for listening for incoming TCP connections.
+`DatagramSocket`: A socket for sending and receiving UDP datagrams.
+`InetAddress`: Represents an IP address.
+`URL`: A uniform resource locator, used to identify a resource on the internet.
+`URLConnection`: Represents a connection to a URL, and provides methods for reading and writing data.
+
+Here's an example of how to use Java Networking to connect to a web server and download a web page:
+
+//////////////// CODE ////////////
+
+import java.net.*;
+import java.io.*;
+
+public class WebPageDownloader {
+    public static void main(String[] args) {
+        try {
+            // Create a URL object for the web page to download
+            URL url = new URL("https://www.example.com/");
+            
+            // Open a connection to the web server
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            
+            // Set the request method to GET
+            conn.setRequestMethod("GET");
+            
+            // Read the response from the server
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            while ((line = in.readLine()) != null) {
+                System.out.println(line);
+            }
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+//////////////// CODE //////////////////
+
+In this example, we create a `URL` object for the web page we want to download, and open a `HttpURLConnection` to connect to the server. We set the request method to `GET`, which is the default method for retrieving data from a web server. We then use a `BufferedReader` to read the response from the server line by line, and print it to the console.
+
+Java Networking can also be used to create server-side applications, such as web servers or chat servers. To do this, you would use classes like `ServerSocket` and `Socket` to listen for incoming connections, and then use I/O streams to communicate with clients.
