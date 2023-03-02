@@ -1,0 +1,95 @@
+##  Java Abstraction
+
+Abstraction is an important concept in object-oriented programming, including Java. It allows you to create abstract classes and interfaces that define a set of methods or behaviors without providing an implementation.
+
+In Java, abstraction is achieved through the `abstract` keyword. An abstract class is a class that cannot be instantiated, but can be subclassed. It can contain abstract methods, which are methods that do not have an implementation, and concrete methods, which do have an implementation. A concrete method can call an abstract method, but the abstract method must be implemented by any subclass that extends the abstract class.
+
+An interface is a special type of abstract class that defines a set of methods that a class must implement if it implements the interface. An interface can also contain constants, default methods with implementation, and static methods.
+
+Here is an example of abstraction in Java:
+
+///////////////////////////////// CODE /////////////////////////////////
+
+public abstract class Shape {
+
+    private String color;
+
+    public Shape(String color) {
+    
+        this.color = color;
+        
+    }
+
+    public String getColor() {
+    
+        return color;
+        
+    }
+
+    public abstract double getArea();
+    
+}
+
+public class Circle extends Shape {
+
+    private double radius;
+
+    public Circle(String color, double radius) {
+    
+        super(color);
+        
+        this.radius = radius;
+        
+    }
+
+    @Override
+    public double getArea() {
+    
+        return Math.PI * radius * radius;
+        
+    }
+    
+}
+
+public interface Drawable {
+
+    void draw();
+    
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+    
+        Circle circle = new Circle("Red", 5.0);
+        
+        System.out.println("Color: " + circle.getColor());
+        
+        System.out.println("Area: " + circle.getArea());
+
+        Drawable drawable = new Drawable() {
+            @Override
+            public void draw() {
+            
+                System.out.println("Drawing...");
+                
+            }
+            
+        };
+        
+        drawable.draw();
+        
+    }
+    
+}
+
+///////////////////////////////// CODE /////////////////////////////////
+
+
+In this example, the `Shape` class is an abstract class that defines a constructor, a concrete method `getColor()`, and an abstract method `getArea()`. The `Circle` class extends the `Shape` class and provides an implementation for the `getArea()` method. The `Drawable` interface defines a single method `draw()`, and the `Main` class creates an instance of the `Circle` class and an anonymous inner class that implements the `Drawable` interface.
+
+Overall, abstraction is a powerful tool for creating flexible and extensible code in Java, and it allows you to define a common interface or behavior that can be implemented by multiple classes or objects.
+
+
+
