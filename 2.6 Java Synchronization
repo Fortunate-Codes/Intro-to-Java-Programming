@@ -1,0 +1,35 @@
+## Java Synchronization
+
+In Java, synchronization is a mechanism that allows multiple threads to access shared resources in a mutually exclusive manner. This prevents race conditions and other problems that can arise when multiple threads try to access the same resource simultaneously.
+
+There are two ways to synchronize methods and blocks of code in Java:
+
+* Synchronized methods: You can declare a method as synchronized by using the `synchronized` keyword. When a thread calls a synchronized method, it acquires the lock on the object that the method belongs to. Other threads that try to call synchronized methods on the same object will have to wait until the lock is released.
+
+Here's an example of a synchronized method:
+
+////////////////// CODE ///////////////
+
+public synchronized void increment() {
+    count++;
+}
+
+////////////////// CODE ///////////////
+
+* Synchronized blocks: You can also synchronize a block of code by using the `synchronized` keyword and specifying the object that the block should be synchronized on. When a thread enters a synchronized block, it acquires the lock on the specified object. Other threads that try to enter synchronized blocks on the same object will have to wait until the lock is released.
+
+Here's an example of a synchronized block:
+
+////////////////// CODE ///////////////
+
+public void increment() {
+    synchronized (this) {
+        count++;
+    }
+}
+
+////////////////// CODE ///////////////
+
+In addition to synchronizing methods and blocks of code, Java also provides several classes that implement synchronization mechanisms, such as `Semaphore`, `CountDownLatch`, and `CyclicBarrier`. These classes can be used to coordinate the execution of multiple threads and ensure that they don't interfere with each other.
+
+Synchronization is an important concept in multithreaded programming, and it's essential to use it properly to avoid race conditions and other problems. However, it's also important to be careful not to overuse synchronization, as it can lead to performance issues and other complications.
