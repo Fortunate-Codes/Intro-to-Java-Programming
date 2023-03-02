@@ -1,0 +1,45 @@
+## Control statement
+
+Control statements are an essential part of any programming language, including Java. 
+These statements allow you to control the flow of execution in your program based on 
+certain conditions or criteria.
+
+There are three main types of control statements in Java: conditional statements, 
+loop statements, and branching statements.
+
+# Conditional Statements
+
+Conditional statements allow you to execute certain blocks of code based on specific 
+conditions. The two main conditional statements in Java are `if` and `switch`. 
+The `if` statement checks a boolean expression and executes a block of code if the expression 
+is true. The `switch` statement checks a variable or expression against a list of possible
+values and executes the corresponding block of code.
+
+# Loop Statements
+
+Loop statements allow you to execute a block of code repeatedly until a certain condition 
+is met. The three main loop statements in Java are `while`, `do-while`, and `for`. 
+The `while` loop executes a block of code as long as a certain condition is true. 
+The `do-while` loop is similar to the `while` loop, but it always executes the block of code 
+at least once before checking the condition. 
+The `for` loop is a more specialized loop that provides a compact way to iterate over a range 
+of values or a collection of objects.
+
+# Branching Statements:
+
+Branching statements allow you to control the flow of execution in your program by 
+jumping to a different location in your code. The two main branching statements in Java are 
+`break` and `continue`. The `break` statement terminates the current loop or 
+switch statement and transfers control to the statement immediately 
+following the terminated statement. 
+The `continue` statement skips the rest of the current iteration of a loop and jumps 
+to the next iteration.
+
+Using these control statements in your Java programs can help you create more sophisticated 
+and flexible code that can respond to different conditions and criteria. 
+By mastering these statements, you can create more powerful and effective programs 
+that can solve a wide range of problems.
+
+I hope this helps you can use other resources like stackoverflow or google for the syntax 
+of the controls statement for more understanding. Thanks
+
