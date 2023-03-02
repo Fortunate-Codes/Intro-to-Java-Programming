@@ -1,0 +1,58 @@
+Java Reflection is a feature in Java that allows a program to examine and modify the runtime behavior of objects, classes, methods, and fields. It enables a Java program to analyze and modify its own behavior at runtime, rather than being limited to the behavior specified at compile-time.
+
+Reflection provides a way to:
+
+Inspect and modify object properties at runtime
+Examine and modify the behavior of a class or method at runtime
+Create new objects and classes dynamically at runtime
+Invoke methods on an object dynamically at runtime
+
+Reflection can be useful in situations where you need to dynamically load and execute classes, create new objects without knowing their class at compile-time, or examine and modify the behavior of a class or method at runtime.
+
+To use Reflection in Java, you typically use the `java.lang.reflect` package, which contains classes and interfaces for working with reflection. Some of the key classes and interfaces in this package include:
+
+`Class`: represents a class or interface at runtime
+`Method`: represents a method of a class or interface at runtime
+`Field`: represents a field of a class or interface at runtime
+`Constructor`: represents a constructor of a class at runtime
+`Modifier`: provides methods for working with modifiers (such as `public`, `private`, `static`, etc.) at runtime
+`InvocationHandler`: used to implement dynamic proxies, which are objects that dynamically implement one or more interfaces at runtime
+
+Here's an example of using Reflection to inspect and modify the properties of an object at runtime:
+
+import java.lang.reflect.*;
+
+public class ReflectionDemo {
+    public static void main(String[] args) throws Exception {
+        // Create a new string object
+        String s = "Hello, World!";
+        
+        // Get the class of the string object
+        Class<?> c = s.getClass();
+        
+        // Get the length field of the string class
+        Field f = c.getDeclaredField("value");
+        f.setAccessible(true);
+        
+        // Get the value of the length field
+        char[] value = (char[]) f.get(s);
+        
+        // Modify the value of the length field
+        value[7] = 'Y';
+        
+        // Print the modified string
+        System.out.println(s);
+    }
+}
+
+In this example, we create a new `String` object and use Reflection to get its class object. We then use Reflection to get the `value` field of the `String` class, which contains the characters of the string.
+
+We make the `value` field accessible using the `setAccessible()` method, since it is a private field. We then get the `value` of the value field using the `get()` method, and modify the character at index 7 (which is the comma) to a capital Y.
+
+Finally, we print the modified string, which should be "Hello, WorldY". This is just one example of what you can do with Reflection in Java, and there are many other use cases for this powerful feature.
+
+
+
+
+
+
