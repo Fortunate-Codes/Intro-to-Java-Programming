@@ -1,0 +1,66 @@
+## Java JDBC
+
+Java Database Connectivity (JDBC) is a standard API for connecting Java applications to databases. JDBC provides a set of interfaces and classes that allow Java programs to interact with databases using SQL queries.
+
+To use JDBC, you need to follow these steps:
+
+Load the JDBC driver: You need to load the JDBC driver class using the Class.forName() method. This step is required to register the driver with the DriverManager.
+
+Create a connection: You need to create a connection object using the DriverManager.getConnection() method. This method takes the database URL, username, and password as arguments.
+
+Create a statement: You need to create a statement object using the Connection.createStatement() method. This method returns a Statement object that can be used to execute SQL queries.
+
+Execute the query: You need to execute the SQL query using the Statement.executeQuery() method. This method returns a ResultSet object that contains the results of the query.
+
+Process the results: You can process the results of the query using the ResultSet.next() method. This method moves the cursor to the next row in the result set. You can then use the ResultSet.getXXX() methods to retrieve the values of the columns in the current row.
+
+Close the connection: Finally, you need to close the connection using the Connection.close() method. This step is important to release the resources used by the connection.
+
+Here is an example of using JDBC to connect to a MySQL database and execute a simple query:
+
+
+//////////// CODE //////////
+
+import java.sql.*;
+
+public class JDBCDemo {
+   public static void main(String[] args) {
+      try {
+         // Load the JDBC driver
+         Class.forName("com.mysql.jdbc.Driver");
+
+         // Create a connection
+         String url = "jdbc:mysql://localhost:3306/test";
+         String username = "root";
+         String password = "";
+         Connection conn = DriverManager.getConnection(url, username, password);
+
+         // Create a statement
+         Statement stmt = conn.createStatement();
+
+         // Execute the query
+         ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+
+         // Process the results
+         while (rs.next()) {
+            int id = rs.getInt("id");
+            String name = rs.getString("name");
+            int age = rs.getInt("age");
+            System.out.println("ID: " + id + ", Name: " + name + ", Age: " + age);
+         }
+
+         // Close the connection
+         conn.close();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
+}
+
+/////////// CODE /////////
+
+In this example, we first load the MySQL JDBC driver using the Class.forName() method. We then create a connection object using the DriverManager.getConnection() method, and a statement object using the Connection.createStatement() method.
+
+We execute a simple SQL query using the Statement.executeQuery() method, and process the results using the ResultSet.next() and ResultSet.getXXX() methods.
+
+Finally, we close the connection using the Connection.close() method. Note that we catch any exceptions that might occur during the execution of the program, and print the stack trace for debugging purposes.
