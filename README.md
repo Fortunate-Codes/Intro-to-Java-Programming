@@ -1,1 +1,27 @@
 # Intro-to-Java-Programming
+
+Java is a popular programming language that is used to develop a wide variety of applications, including desktop applications, mobile applications, web applications, and enterprise applications. It was first released in 1995 by Sun Microsystems and has since become one of the most widely used programming languages in the world.
+
+Some of the key features of Java include its platform independence, object-oriented programming model, automatic memory management, and built-in support for networking and concurrency. Java code is compiled into bytecode, which can be run on any platform that has a Java Virtual Machine (JVM) installed, making it easy to write once and run anywhere.
+
+Once you have the JDK installed, you can use a text editor or an integrated development environment (IDE) to write your Java code. Some popular IDEs for Java include Eclipse, IntelliJ IDEA, and NetBeans.
+
+To write a basic Java program, you'll need to create a class and a main method. Here's an example:
+
+////////////////////////////// Code /////////////////////////////////////
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+	
+		System.out.println("Hello, world");
+		
+	}
+	
+}
+
+////////////////////////////// Code /////////////////////////////////////
+
+In this Program, we've created a class called `HelloWorld` with a main method that prints the message "Hello World!" to the console. To run this program, you'll need to compile it using the `javac` command and then run it using the `java` command.
+
+That's a very brief introduction to Java programming!
